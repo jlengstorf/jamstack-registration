@@ -1,5 +1,4 @@
-//
-// process.env.FAUNA_API_SECRET
+const fetch = require('node-fetch');
 
 exports.handler = async (event) => {
   const body = JSON.parse(event.body);
@@ -16,7 +15,14 @@ exports.handler = async (event) => {
             createRegistration(data: {
               name: $name
               email: $email
-            }) {
+            }) {mutation {
+              createRegistration(data: {
+                name: 
+                email: 
+              }) {
+                _id
+              }
+            }
               _id
             }
           }
