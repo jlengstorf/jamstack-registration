@@ -9,7 +9,7 @@ exports.handler = async (event) => {
     headers: {
       Authorization: `Bearer ${process.env.FAUNA_API_SECRET}`,
     },
-    body: {
+    body: JSON.stringify({
       query: `
           mutation ($name: String! $email: String!) {
             createRegistration(data: {
@@ -28,7 +28,7 @@ exports.handler = async (event) => {
           }
         `,
       variables: { name: `${firstname} ${lastname}`, email },
-    },
+    }),
   })
     .then((res) => res.json())
     .catch((err) => console.error(err));
