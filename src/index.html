@@ -42,12 +42,22 @@
         font-weight: 900;
         margin-top: 0.5rem;
       }
+
+      .hidden {
+        display: none;
+      }
     </style>
     <title>Document</title>
   </head>
   <body>
     <h1>Register for our thing!</h1>
-    <form action="" name="registration" data-netlify="true">
+
+    <form
+      action=""
+      name="registration"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+    >
       <label for="firstname">First Name</label>
       <input id="firstname" name="firstname" type="text" />
 
@@ -56,6 +66,12 @@
 
       <label for="email">Email Address</label>
       <input id="email" name="email" type="email" />
+
+      <p class="hidden">
+        <label
+          >Don’t fill this out if you're human: <input name="bot-field"
+        /></label>
+      </p>
 
       <button type="submit">Register</button>
     </form>
