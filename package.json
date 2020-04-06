@@ -2,6 +2,9 @@
   "name": "jamstack-registration",
   "version": "0.0.1",
   "main": "index.js",
+  "scripts": {
+    "functions": "cd functions && npm i && cd .."
+  },
   "author": "Jason Lengstorf <jason@lengstorf.com> (https://lengstorf.com)",
   "license": "MIT"
 }
